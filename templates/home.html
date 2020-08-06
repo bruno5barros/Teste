@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Configuradro Router</title>
+  </head>
+  <body style="width: 200px; height: 110px; overflow: visible;">
+    <h1>Configurador Router</h1>
+    <button onclick="myfunction()" type="button" name="button">Gerar configuração</button>
+    <br>
+    <br>
+    <a href="/cadastoequipamento/">Cadastrar Equipamento</a>
+    <br>
+    <br>
+    {% for cliente in clientes %}
+      <div class="">
+        <p><strong>ip:</strong> {{ cliente.ip }}</p>
+        <p><strong>hostname:</strong> {{ cliente.hostname }}</p>
+        <p><strong>cliente:</strong> {{ cliente.nome }}</p>
+        <p><strong>morada:</strong> {{ cliente.morada }}</p>
+        <p><strong>Contacto Técnico:</strong>  - </p>
+        <br>
+      </div>
+    {% endfor %}
+
+    <script>
+      function myfunction() {
+        console.log("This is a working button");
+        window.location.href = "/GerarConfig/";
+      }
+    </script>
+  </body>
+</html>
